@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { MdTheaters } from "react-icons/md";
+import { CartWidget } from './CartWidget';
 
 
 export const NavBar = () => {
@@ -11,6 +12,7 @@ export const NavBar = () => {
       <Container>
         <MdTheaters></MdTheaters>
         <Navbar.Brand href="#home">SuperEntradas!</Navbar.Brand>
+        
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -20,6 +22,7 @@ export const NavBar = () => {
             <Nav.Link href="#link">Ubicacion</Nav.Link>
             <Nav.Link href="#link">Contacto</Nav.Link>
           </Nav>
+          <CartWidget></CartWidget>
         </Navbar.Collapse>
       </Container>
     </Navbar>
