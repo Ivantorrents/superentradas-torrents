@@ -1,29 +1,19 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import React from 'react';
+import { ItemListContainer } from './components/itemListContainer/ItemListContainer';
 import { NavBar } from './components/NavBar';
-import {ItemListContainer} from './components/ItemListContainer';
-import {ItemCount} from './components/ItemCount';
-import { useState } from 'react';
+import { ItemCount } from './components/ItemCount';
 
 function App() {
-
-const [estadoCarrito, setEstadoCarrito] = useState ("Carrito vacio");
-const [numeroProductos, setNumeroProductos] = useState(0);
-
-const agregar = (productos)=>{
-  console.log('Productos agregados', productos)
-  setNumeroProductos(productos);
-  setEstadoCarrito(`El carrito tiene ${productos} productos`);
-}
-
-console.log('numeroProductos', numeroProductos);
+  const agregarProducto =(count)=>{
+    alert(`agregaste ${count} items al carrito`)
+  }
 
   return (
     <>
     <NavBar/>
-    <ItemListContainer saludo={"Bienvenido a SuperEntradas!"}/>
-    <p>{estadoCarrito}</p>
-    <ItemCount stock={20} initial={0} agregarProducto={agregar}/>
+    <ItemListContainer greeting={"este es un mensaje "}/>
+    <ItemCount stock={20} initial={1} agregarProducto={agregarProducto}/>
     </>
   );
 }
