@@ -1,0 +1,15 @@
+#item-list-container{
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #item{
+        font-size: 2vh;
+        border: 1px solid black;
+        width: 200px;
+        height: 400px;
+        margin: 20px;
+    }
+}

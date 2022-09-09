@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-export const Item = (title, description, price, pictureUrl) => {
+export const Item = ({title, description, price, pictureUrl}) => {
   return (
     <Card style={{ width: '18rem' }}id="item">
       <Card.Img variant="top" src={pictureUrl} />

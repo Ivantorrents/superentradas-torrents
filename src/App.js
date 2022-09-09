@@ -1,21 +1,24 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-import React from 'react';
+import { NavBar } from './components/NavBar'
 import { ItemListContainer } from './components/itemListContainer/ItemListContainer';
-import { NavBar } from './components/NavBar';
-import { ItemCount } from './components/ItemCount';
+import { ItemCount } from './components/itemCount/ItemCount';
 
-function App() {
-  const agregarProducto =(count)=>{
-    alert(`agregaste ${count} items al carrito`)
+
+export function App() {
+
+  const agregarProducto = (contador) =>{
+      alert(`Agregaste ${contador} productos al carrito`)
   }
 
-  return (
+  return(
     <>
     <NavBar/>
-    <ItemListContainer greeting={"este es un mensaje "}/>
-    <ItemCount stock={20} initial={1} agregarProducto={agregarProducto}/>
+    <ItemListContainer saludo={"Bienvenido a SuperEntradas!"}/>
+    <ItemCount stock={20} initial={1} agregarProducto={agregarProducto} />
     </>
   );
+
 }
 
 export default App;
