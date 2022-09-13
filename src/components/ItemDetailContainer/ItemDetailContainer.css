@@ -1,0 +1,20 @@
+#item-detail-container {
+  width: 100%;
+  height: 100vh;
+  background-color: aqua;
+}
+
+#item-detail-container #item-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#item-detail-container #item-detail #portada {
+  width: 50%;
+}
+
+#item-detail-container #item-detail #data {
+  width: 50%;
+}
+/*# sourceMappingURL=ItemDetailContainer.css.map */

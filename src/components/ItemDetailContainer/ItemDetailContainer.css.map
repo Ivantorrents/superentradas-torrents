@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,sBAAsB,CAAA;EAClB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,IAAI;CAUzB;;AAbD,AAII,sBAJkB,CAIlB,YAAY,CAAA;EACR,OAAO,EAAE,IAAI;CAOhB;;AAZL,AAMQ,sBANc,CAIlB,YAAY,CAER,QAAQ,CAAA;EACJ,KAAK,EAAE,GAAG;CACb;;AART,AASQ,sBATc,CAIlB,YAAY,CAKR,KAAK,CAAA;EACD,KAAK,EAAE,GAAG;CACb",
+    "sources": [
+        "ItemDetailContainer.scss"
+    ],
+    "names": [],
+    "file": "ItemDetailContainer.css"
+}
