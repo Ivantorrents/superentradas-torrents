@@ -1,1 +1,60 @@
-/* No CSS *//*# sourceMappingURL=itemCount.css.map */
+.item-count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  height: 150px;
+  background: blue;
+  color: black;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  background: white;
+  width: 90%;
+  height: 30px;
+}
+
+.boton-control {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: white;
+  border-radius: 50%;
+  background: #101c2b;
+}
+
+.add {
+  padding: 10px;
+  border-radius: 5px;
+  background: #101c2b;
+  color: white;
+  width: 100%;
+  margin: 10px 0;
+}
+/*# sourceMappingURL=itemCount.css.map */

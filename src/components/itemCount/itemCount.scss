@@ -1,0 +1,42 @@
+.item-count {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+    background: blue;
+    color: black;
+    margin: 10px auto;
+    padding: 10px;
+}
+.count {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: white;
+    width: 90%;
+    height: 30px;
+}
+.boton-control {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: white;
+    border-radius: 50%;
+    background: #101c2b;
+}
+.add {
+    padding: 10px;
+    border-radius: 5px;
+    background: #101c2b;
+    color: white;
+    width: 100%;
+    margin: 10px 0;
+}
+
+
+
+

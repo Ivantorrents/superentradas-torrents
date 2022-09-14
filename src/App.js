@@ -5,6 +5,7 @@ import { ItemListContainer } from './components/itemListContainer/ItemListContai
 import { ItemCount } from './components/itemCount/ItemCount';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './components/context/cartContext';
 
 
 export function App() {
@@ -30,7 +31,9 @@ export function App() {
     <ItemCount stock={20} initial={1} agregarProducto={agregarProducto} />
     */}
     <ItemDetailContainer/>
+    
     </>
+    
   );
 
 }
