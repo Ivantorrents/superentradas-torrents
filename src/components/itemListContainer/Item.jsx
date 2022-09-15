@@ -20,5 +20,3 @@ export const Item = ({id, title, description, price, pictureUrl}) => {
     </Card>
   );
 }
-
-
