@@ -1,11 +1,16 @@
 import React from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../context/cartContext'
 import { ItemCount } from '../itemCount/ItemCount'
+import { Item } from '../itemListContainer/Item'
 import "./ItemDetailContainer.scss"
 
 export const ItemDetail = ({title, description, price, pictureUrl}) => {
+  const {agregarProducto} = useContext(CartContext)
 
-  const agregarProducto = (contador) =>{
-    console.log(agregarProducto, contador)
+  const onAdd = (contador) =>{
+    const newProduct={...Item, qty: contador}
+    agregarProducto(newProduct)
   }
 
   return (
@@ -20,7 +25,7 @@ export const ItemDetail = ({title, description, price, pictureUrl}) => {
             <h3> ${price} </h3>
 
         </div>
-          <ItemCount initial={1} stock={20} agregarProducto={agregarProducto} />
+          <ItemCount initial={1} stock={20} onAdd={onAdd} />
         </div>
   )
 }

@@ -7,6 +7,7 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './components/context/cartContext';
 import { CartContainer } from './components/cartContainer/CartContainer';
+import { PaginaFirebase } from './components/PaginaFirebase/PaginaFirebase';
 
 
 export function App() {
@@ -28,6 +29,7 @@ export function App() {
                   <Route path="/item/:itemId" element={<ItemDetailContainer/>}/>
                   <Route path="/cart" element={<CartContainer/>}/>
                   <Route path='*' element={<ItemListContainer />}/>
+                  <Route path="/firebase" element = {<PaginaFirebase/>}/>
                 </Routes>
             </div>
         </div>

@@ -4,7 +4,7 @@ import { CartContext } from '../context/cartContext';
 import { CartItem } from '../cartItem/CartItem';
 
 export const CartContainer = () => {
-  const {productCartList, clearProductCartList} = useContext(CartContext);
+  const {productCartList, clearProductCartList, getTotalPrice} = useContext(CartContext);
 
   return (
     <div>
@@ -20,6 +20,7 @@ export const CartContainer = () => {
             }
             <hr/>
             <button onClick={clearProductCartList}>Vaciar el carrito</button>
+            <p> Precio total: {getTotalPrice()} </p>
           </>
           :
           <p>No has agregado productos</p>

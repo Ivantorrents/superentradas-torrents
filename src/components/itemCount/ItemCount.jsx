@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "./itemCount.scss"
 
 
-export const ItemCount = ({stock, initial, agregarProducto}) => {
+export const ItemCount = ({stock, initial, onAdd}) => {
     const [contador, setContador]= useState(initial);
 
     const incrementar = ()=>{
@@ -21,11 +21,12 @@ export const ItemCount = ({stock, initial, agregarProducto}) => {
     return (
         <div className='item-count' >
             <div className='count'>
-            <p>Productos {contador} </p>
-            <button onClick ={incrementar} disabled = {contador === stock} className="boton-control" > + </button>
-            <button onClick ={decrementar} disabled = {contador === initial} className="boton-control" > - </button>
+            <p>Stock disponible: {stock} </p>
+            <button disabled = {stock === 0} onClick ={decrementar}  className="boton-control" > - </button>
+            <p> {contador} </p>
+            <button disabled = {stock === 0} onClick ={incrementar}  className="boton-control" > + </button>
             </div>
-            <button className='add' onClick ={()=>(agregarProducto(contador))}> Agregar al carrito </button>
+            <button disabled = {stock === 0} className='add' onClick ={()=>(onAdd(contador))}> Agregar al carrito </button>
         </div>
     )
 }

@@ -10,28 +10,30 @@ export const CartProvider = ({children})=>{
         return elementExists;
     }
 
-    const addProduct = (product, qty)=>{
+    const agregarProducto = (product, qty)=>{
+        const newProduct={...product, quantity:qty}
         const newList = [...productCartList];
-        //verifico si el producto existe en el arreglo
-        // si existe, actualice la propiedad quantity de ese producto
+        newList.push(newProduct)
+        setProductCartList(newList)
+        
         if(isInCart(product.id)){
             const productIndex = productCartList.findIndex(element=>element.id===product.id);
             newList[productIndex].quantity = newList[productIndex].quantity + qty;
             newList[productIndex].totalPrice = newList[productIndex].quantity * newList[productIndex].price;
             setProductCartList(newList)
         } else{
-        //si no existe, agregue el producto al listado
+       
             const newProduct={...product, quantity:qty, totalPrice: qty*product.price}
-            // {id:1,title:"camisa", quantity:3}
+            
             const newList = [...productCartList];
             newList.push(newProduct);
             setProductCartList(newList);
         }
     }
 
-    const removeProduct = (idProduct)=>{
+    const removeProduct = (productId)=>{
         const copyArray = [...productCartList];
-        const newArray = copyArray.filter(elm=>elm.id !== idProduct);
+        const newArray = copyArray.filter(elm=>elm.id !== productId);
         setProductCartList(newArray);
     }
 
@@ -40,12 +42,17 @@ export const CartProvider = ({children})=>{
     }
 
     const getTotalProducts = ()=>{
-        const totalProducts = productCartList.reduce((acc,item)=>acc + item.quantity,0);
+        const totalProducts = productCartList.reduce((acc,product)=>acc + product.quantity,0);
         return totalProducts;
     }
 
+    const getTotalPrice = ()=>{
+        const totalPriceProducts = productCartList.reduce((acc, product)=> acc + product.totalPrice,0)
+        return totalPriceProducts
+    }
+
     return(
-        <CartContext.Provider value={{productCartList,addProduct, removeProduct, clearProductCartList, isInCart, getTotalProducts}}>
+        <CartContext.Provider value={{productCartList,agregarProducto, removeProduct, clearProductCartList, isInCart, getTotalProducts, getTotalPrice}}>
             {children}
         </CartContext.Provider>
     )
