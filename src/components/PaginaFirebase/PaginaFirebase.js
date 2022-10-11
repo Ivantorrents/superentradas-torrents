@@ -1,25 +1,22 @@
 import React, { useEffect } from 'react'
-import {  getDocs, doc } from 'firebase/firestore'
+import {  getDocs, collection } from 'firebase/firestore'
 import { db } from '../../utils/fireBase'
 
 
 
 export const PaginaFirebase=()=> {
-
     
     useEffect(()=>{
-        const getDocumento = async()=>{
-            const query = doc(db, "SuperEntradas!", 
-            "0e256nPH2puzjVzRUt93");
+        const getData = async()=>{
+            const query = collection(db, "productos"); 
             const response = await getDocs(query);
-            const producto = {
-                ...response.data(),
-                id: response.id
-            }
-            console.log("productos", producto)
+            const docs = response.docs;
+            const data = docs.map(doc=>{return {...doc.data(), id: doc.id}})
+            console.log("data", data)
         }
-        getDocumento()
+        getData()
     }, [])
+    
 
   return (
     <div>PaginaFirebase</div>

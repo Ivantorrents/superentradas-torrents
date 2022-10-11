@@ -31,9 +31,9 @@ export const CartProvider = ({children})=>{
         }
     }
 
-    const removeProduct = (productId)=>{
+    const removeProduct = (idProduct)=>{
         const copyArray = [...productCartList];
-        const newArray = copyArray.filter(elm=>elm.id !== productId);
+        const newArray = copyArray.filter(elm=>elm.id !== idProduct);
         setProductCartList(newArray);
     }
 
